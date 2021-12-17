@@ -1,0 +1,65 @@
+﻿@model HabeckTurismo.Models.Viagem
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="header-pags p-0 m-0">
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeViag.svg" alt="icon">
+    </figure>
+    <h2 class="text-center">Excluir Viagem</h2>
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeViag.svg" alt="icon">
+    </figure>
+</div>
+<hr class="p-0 m-0">
+
+<h3 class="mx-5 my-2 alert alert-warning rounded-lg">Tem certeza que deseja excluir esta Viagem?</h3>
+<div class="p-0 m-0 justify-content-around d-flex">
+    <dl class="person row p-3 mx-5 my-3">
+        <dt class="col-sm-4">
+            Data de Ida:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataIda)
+        </dd>
+        <dt class="col-sm-4">
+            Data de Volta:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataVolta)
+        </dd>
+        <dt class="col-sm-4">
+            Diárias de hotel:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Diarias)
+        </dd>
+        <dt class="col-sm-4">
+            Cliente:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+        <dt class="col-sm-4">
+            Destino:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Destino.Cidade)
+        </dd>
+        <div class="col-sm-12 p-2 text-center">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Excluir" class="btn btn-danger mx-3" />
+                <a asp-action="Index" class="text-primary p-3"><span class="material-icons">
+                        reply
+                    </span> Voltar
+                </a>
+            </form>
+        </div>
+    </dl>
+    <div class="p-5">
+        <img class="img-fluid my-4" src="~/Assets/viagem.svg" alt="Avião">
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model HabeckTurismo.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="header-pags p-0 m-0">
+    <figure>
+        <img class="img-fluid" src="~/Assets/female_avatar.svg" alt="icon">
+    </figure>
+    <h2 class="text-center">Excluir Cliente</h2>
+    <figure>
+        <img class="img-fluid" src="~/Assets/male_avatar.svg" alt="icon">
+    </figure>
+</div>
+<hr class="p-0 m-0">
+
+<h3 class="mx-5 my-2 alert alert-warning rounded-lg">Tem certeza que deseja excluir este Cliente?</h3>
+<div class="p-0 m-0 justify-content-around d-flex">
+    <div class="person row p-3 mx-5 my-3 w-75">
+        <dt class = "col-sm-4">
+            Nome:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-4">
+            CPF:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+        <dt class = "col-sm-4">
+            Endereço:
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+    <div class="col-sm-12 p-2 text-center">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Excluir" class="btn btn-danger mx-3" /> 
+                <a asp-action="Index" class="text-primary p-3"><span class="material-icons">
+                    reply
+                </span> Voltar
+            </a>
+            </form>
+        </div>
+    </div>
+    <div class="p-5">
+        <img class="img-fluid my-4" src="~/Assets/cliente.svg" alt="Avião">
+    </div>
+</div>

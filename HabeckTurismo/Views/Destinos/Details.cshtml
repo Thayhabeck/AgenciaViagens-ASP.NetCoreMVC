@@ -1,0 +1,72 @@
+﻿@model HabeckTurismo.Models.Destino
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="header-pags p-0 m-0">
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeHT.svg" alt="icon">
+    </figure>
+    <h2 class="text-center">Detalhes do Destino</h2>
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeHT.svg" alt="icon">
+    </figure>
+</div>
+<hr class="p-0 m-0">
+<div class="p-0 m-0 justify-content-around d-flex">
+    <div class="person row p-3 mx-5 my-3 w-75">
+        <dt class="col-sm-4">
+            Imagem:
+        </dt>
+        <dd class="col-sm-8">
+            <img class="img-fluid w-50" src="@Html.DisplayFor(model => model.Url)">
+        </dd>
+        <dt class="col-sm-4">
+            Cidade:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class="col-sm-4">
+            Estado:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-4">
+            Descrição:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class="col-sm-4">
+            Preço da diária:
+        </dt>
+        <dd class="col-sm-8">
+            R$ @Html.DisplayFor(model => model.PrecoDiaria)
+        </dd>
+
+        <dt class="col-sm-4">
+            Região:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Regiao.NomeReg)
+        </dd>
+        <div class="col-sm-12 p-2 text-center">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm m-3">
+                <span class="material-icons">
+                    edit
+                </span>
+            </a>
+            <a asp-action="Index" class="text-primary p-3"><span class="material-icons">
+                    reply
+                </span>Voltar
+            </a>
+            
+        </div>
+    </div>
+    <div class="p-5">
+        <img class="img-fluid" src="~/Assets/destino.svg" alt="Avião">
+    </div>
+</div>

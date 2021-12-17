@@ -1,0 +1,64 @@
+﻿@model HabeckTurismo.Models.Viagem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="header-pags p-0 m-0">
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeViag.svg" alt="icon">
+    </figure>
+    <h2 class="text-center">Detalhes da Viagem</h2>
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeViag.svg" alt="icon">
+    </figure>
+</div>
+<hr class="p-0 m-0">
+<div class="p-0 m-0 justify-content-around d-flex">
+    <dl class="person row p-3 mx-5 my-3 w-75">
+        <dt class="col-sm-4">
+            Data de Ida:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataIda)
+        </dd>
+        <dt class="col-sm-4">
+            Data de Volta:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.DataVolta)
+        </dd>
+        <dt class="col-sm-4">
+            Diárias de hotel:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Diarias)
+        </dd>
+        <dt class="col-sm-4">
+            Cliente:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+        <dt class="col-sm-4">
+            Destino:
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Destino.Cidade)
+        </dd>
+        <div class="col-sm-12 p-2 text-center">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm m-3">
+                <span class="material-icons">
+                    edit
+                </span>
+            </a>
+            <a asp-action="Index" class="text-primary p-3"><span class="material-icons">
+                    reply
+                </span>Voltar
+            </a>
+        </div>
+    </dl>
+    <div class="p-5">
+        <img class="img-fluid my-4" src="~/Assets/viagem.svg" alt="Avião">
+    </div>
+</div>

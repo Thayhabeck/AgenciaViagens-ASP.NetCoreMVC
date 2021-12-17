@@ -1,0 +1,63 @@
+﻿@model HabeckTurismo.Models.Viagem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="header-pags p-0 m-0">
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeViag.svg" alt="icon">
+    </figure>
+    <h2 class="text-center">Adicionar Viagem</h2>
+    <figure>
+        <img class="img-fluid" src="~/Assets/iconeViag.svg" alt="icon">
+    </figure>
+</div>
+<hr class="p-0 m-0">
+<div class="row p-5 justify-content-around font-weight-bolder">
+    <div class="col-md-4 person p-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataIda" class="control-label">Data de Ida</label>
+                <input asp-for="DataIda" class="form-control" />
+                <span asp-validation-for="DataIda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataVolta" class="control-label">Data de Volta</label>
+                <input asp-for="DataVolta" class="form-control" />
+                <span asp-validation-for="DataVolta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diarias" class="control-label">Diárias de hotel</label>
+                <input asp-for="Diarias" class="form-control" />
+                <span asp-validation-for="Diarias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label">Cliente</label>
+                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinoId" class="control-label">Destino</label>
+                <select asp-for="DestinoId" class ="form-control" asp-items="ViewBag.DestinoId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index" class="text-primary">
+                <span class="material-icons">
+                    reply
+                </span>Voltar
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <img class="img-fluid my-4" src="~/Assets/viagem.svg" alt="Avião">
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

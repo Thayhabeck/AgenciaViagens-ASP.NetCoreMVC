@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HabeckTurismo.Models.Destino>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="header-pags p-0 m-0">
+    <figure>
+        <img class="img-fluid" src="~/Assets/aviaocoracaoesq.svg" alt="Avião">
+    </figure>
+    <h2 class="text-center">Nossos Destinos</h2>
+    <figure>
+        <img class="img-fluid" src="~/Assets/aviaocoracaodir.svg" alt="Avião">
+    </figure>
+</div>
+<hr class="p-0 m-0">
+<div class="w-100 p-5">
+    <p>
+        <a asp-action="Create" class="btn btn-primary d-inline-flex">
+            <span class="material-icons px-1">
+                add_circle
+            </span>Adicionar Destino
+        </a>
+    </p>
+    <div class="card-deck d-flex">
+        @foreach (var item in Model)
+        {
+            <div class="card my-3">
+                <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.Url)" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Cidade) - @Html.DisplayFor(modelItem =>
+                    item.Estado)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
+                    <hr>
+                    <p class="card-text text-center"><small class="text-muted"> Diárias a partir de </small> <span
+                        class="preco">R$@Html.DisplayFor(modelItem => item.PrecoDiaria)</span></p>
+                    <hr>
+                    <div class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                        <span class="material-icons">
+                            edit
+                        </span>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                        <span class="material-icons">
+                            info
+                        </span>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                        <span class="material-icons">
+                            delete
+                        </span>
+                    </a>
+
+                    <a asp-controller="Viagens" asp-action="Create" class="btn btn-secondary btn-sm">
+                        Viajar!
+                    </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
