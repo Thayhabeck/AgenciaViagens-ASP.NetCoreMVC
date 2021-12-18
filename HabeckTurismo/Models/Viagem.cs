@@ -25,7 +25,5 @@ namespace HabeckTurismo.Models
         [Required]
         public int DestinoId { get; set; }
         public Destino Destino { get; set; }
-
-        public double total { get { return Math.Round((Diarias * Destino.PrecoDiaria),2); } }
     }
 }
